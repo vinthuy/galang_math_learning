@@ -19,6 +19,9 @@ func NewStack() *Stack {
 }
 
 func (stack *Stack) Push(v interface{}) {
+	if  v == nil{
+		return
+	}
 	node := node.New2(v, stack.top)
 	node.Next = stack.top
 	stack.top = node
